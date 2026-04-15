@@ -1,76 +1,13 @@
-<!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofoliu Personal</title>
-    <link rel="stylesheet" href="style.css">
-    <link  href="script.js">
-    <link  href="array.js">
-
-</head>
-<body>
-    <script>
-        alert("Hello World!");
-    </script>
-
-    <header>
-        <h1>Oltei Filip</h1>
-        <p>Facultatea de Inginerie Electrica</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#about">Despre Mine</a></li>
-            <li><a href="#education">Educație</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section id="about">
-            <h2>Despre mine</h2>
-            <img src="profile.JPG" alt="Poză de profil a autorului" loading="lazy" class="profile-img">
-            <p>Salutare! Sunt un tanar pasionat de tehnologie,muzica,arta,si calatorii.</p>
-        </section>
-
-        <section id="education">
-            <h2>Educație</h2>
-            <ol>
-                <li>Colegiul Scoala Nationala de Gaz Medias (2017 - 2021)</li>
-                <li>Universitatea, Facultatea de Inginerie Electrica si stiinta Calculatoarelor (2024 - Prezent)</li>
-                
-            </ol>
-        </section>
-    </main>
-
-    <aside>
-        <h3>Informații extra</h3>
-        <p><strong>Hobby-uri:</strong>Productia de muzica,fotografiatul,sportul,jocurile video</p>
-        <blockquote>"Cea mai bună modalitate de a prezice viitorul este să-l creezi."</blockquote>
-    </aside>
-
-    <footer id="contact">
-        <h2>Contact</h2>
-        <form>
-            <div class="form-group">
-                <label for="name">Nume:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Mesaj:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" onclick="submitForm(event)">Trimite Mesajul</button>
-        </form>
-        
-        <p style="margin-top: 20px;">&copy; 2026 Toate drepturile rezervate.</p>
-        
-        <script src="js/contact_form.js"></script>
-    </footer>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lab1</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
