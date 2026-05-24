@@ -1,65 +1,73 @@
-import Card from './Card';
-import React, { useState } from 'react';
-import QuickNote from './QuickNote';
-import TodoList from './TodoList';
-import ContactForm from './ContactForm';
+import { BrowserRouter, Routes, Route } from 'react-router';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
+import Navbar from './Navbar';
+import ProjectForm from './ProjectForm';
+
+
+
+
 
 
 function App() {
 
-    const projects = [
-    { title: "Proiect 1", description: "Pagina personala" },
-    { title: "Proiect 2", description: "Calculator buget" },
-    { title: "Proiect 3", description: "Dashboard React" },
-  ];
-
+    
+  //delete
   
+  const handleDelete = async (id) => {
+    try {
+      
+      const response = await fetch('http://localhost:3000/api/projects/' + id, {
+        method: 'DELETE',
+      });
+      
+      if (response.ok) {
+        
+        setProjects(projects.filter(p => p._id !== id));
+      }
+    } catch (error) {
+      console.error("Eroare la ștergere:", error);
+    }
+};
 
-    const [count, setCount] = useState(0);
+ 
+
+
+
+ return (
+ <BrowserRouter>
     
 
-  return (
-    <div>
-      <h1>Dashboard</h1>
-      <p>Oltei Filip</p>
+ <Navbar></Navbar>
 
-      <div>
+ 
 
-        <p>Ai apasat de {count} ori</p>
 
-        <button onClick={() => setCount(count + 1)}>Click</button>
+ 
+ 
+ 
 
-      </div>
+ <Routes>
+ <Route path="/" element={<Home />} />
+ <Route path="/projects" element={<Projects handleDelete={handleDelete} />} />
+ <Route path="/contacts" element={<Contact />} />
 
-      <QuickNote/>
+ 
+ 
+ </Routes>
 
-      <TodoList/>
 
-      <ContactForm/>
-      
-      {projects.map(function(item, index) {
-        return (
+ </BrowserRouter>
 
-          <Card 
-            key={index} 
-            title={item.title} 
-            description={item.description} 
+    
+    
 
-            
-          />
-        );
-      })}
+   
 
-      
+    
 
-    </div>
 
  );
-
-
 }
-
-
-
-export default App
-
+export default App;
